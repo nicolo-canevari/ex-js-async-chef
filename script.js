@@ -1,3 +1,4 @@
+
 // Funzione asincrona che restituisce la data di nascita dello chef di una ricetta
 async function getChefBirthday(id) {
     try {
@@ -30,7 +31,12 @@ async function getChefBirthday(id) {
 
 
         // Restituisce la data di nascita dello chef
-        return user.birthDate;
+        // return user.birthDate;
+
+        // Usa dayjs per formattare la data in formato DD/MM/YYYY
+        const formattedDate = dayjs(user.birthDate).format('DD/MM/YYYY');
+
+        return formattedDate
 
     } catch (error) {
         // In caso di errore, lo rilancia per permettere al chiamante di gestirlo
